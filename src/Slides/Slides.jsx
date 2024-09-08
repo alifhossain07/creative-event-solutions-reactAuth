@@ -1,115 +1,26 @@
+import React from 'react';
+import Slide from '../components/Slide/Slide';
 
-import React, { useState } from "react"
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
-import "./style.css"
-import Slide from "../Slide/Slide";
-
-
-
-const Slides = ({sliderData}) => {
-
-
-    const {short_details,title} = sliderData;
-
-    const [currentSlide, setCurrentSlide] = useState(0)
-    const [loaded, setLoaded] = useState(false);
-    const [fadeClass, setFadeClass] = useState("fade-enter-active"); 
-
-
-    const [sliderRef, instanceRef] = useKeenSlider({
-    initial: 0,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
-      
-    },
-    created() {
-      setLoaded(true)
-    },
-   
-  })
-  
-  
-
-
-    return (
-        <div className="mt-10">
-            <div className="navigation-wrapper">
-
-
-        <div ref={sliderRef} className="keen-slider rounded-2xl">
-
-        {sliderData.map((slide) => (
-            <Slide slide={slide} ></Slide>
-          ))}
-        </div>
-
-
-
-
-        {loaded && instanceRef.current && (
-          <>
-            <Arrow
-              left
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
-              disabled={currentSlide === 0}
-            />
-
-            <Arrow
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
-              disabled={
-                currentSlide ===
-                instanceRef.current.track.details.slides.length - 1
-              }
-            />
-          </>
-        )}
-      </div>
-      {loaded && instanceRef.current && (
-        <div className="dots">
-          {[
-            ...Array(instanceRef.current.track.details.slides.length).keys(),
-          ].map((idx) => {
-            return (
-              <button
-                key={idx}
-                onClick={() => {
-                  instanceRef.current?.moveToIdx(idx)
-                }}
-                className={"dot" + (currentSlide === idx ? " active" : "")}
-              ></button>
-            )
-          })}
-        </div>
-      )}
-        </div>
-    );
-};
-
-function Arrow(props) {
-  const disabled = props.disabled ? " arrow--disabled" : ""
+const Slides = ({ sliderData }) => {
   return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${disabled}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
-  )
-}
+    <div className='bg-gray-300 h-full'>
+      
+      <div className="carousel w-full">
+        {sliderData.map((slider, index) => (
+          <Slide key={index} slider={slider} index={index + 1} />
+        ))}
+      </div>
 
+      {/* Carousel navigation buttons */}
+      <div className="flex w-full justify-center gap-2 py-2">
+        {sliderData.map((_, index) => (
+          <a key={index} href={`#item${index + 1}`} className="btn bg-sky-300 btn-sm lg:btn-md">
+            {index + 1}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Slides;
