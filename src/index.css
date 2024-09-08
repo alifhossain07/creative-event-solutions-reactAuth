@@ -5,7 +5,7 @@
 
 /* Apply the cyan background color to the entire page */
 html, body {
-  @apply bg-gray-300; /* Use Tailwind color classes */
+   /* Use Tailwind color classes */
   height: 100%; /* Ensure the body takes up the full viewport height */
   margin: 0; /* Remove default margin */
 }

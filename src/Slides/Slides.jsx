@@ -3,7 +3,7 @@ import Slide from '../components/Slide/Slide';
 
 const Slides = ({ sliderData }) => {
   return (
-    <div className='bg-gray-300 h-full'>
+    <div className='h-full'>
       
       <div className="carousel w-full">
         {sliderData.map((slider, index) => (
