@@ -13,10 +13,14 @@ const Header = () => {
             <li className=" font-bold mr-3">
                 <NavLink to="/about">About</NavLink>
             </li>
-            <li className=" font-bold">
+            <li className=" font-bold mr-3">
                 <NavLink to="/contactus">Contact Us</NavLink>
             </li>
+            <li className=" font-bold">
+                <NavLink to="/bookedevents">Booked Events</NavLink>
+            </li>
         </>
+        
     )
 
 
