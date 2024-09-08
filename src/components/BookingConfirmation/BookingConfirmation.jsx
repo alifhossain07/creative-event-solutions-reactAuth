@@ -9,8 +9,8 @@ const BookingConfirmation = () => {
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-4xl font-bold mb-4">Booking Confirmed</h1>
+        <div className="container mt-8 mx-auto p-4">
+            <h1 className="lg:text-4xl text-2xl font-bold mb-4">Booking Confirmed</h1>
             <p className="text-lg mb-4">Thank you for booking the event!</p>
             <h2 className="text-2xl font-semibold mb-2">Event Details</h2>
             <img src={event.img} alt={event.title} className="w-full h-64 object-cover mb-4" />
