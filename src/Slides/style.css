@@ -128,4 +128,11 @@ body {
   .arrow--disabled {
     fill: rgba(255, 255, 255, 0.5);
   }
+  .fade-enter, .fade-exit {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* 1 second for fading effect */
+  }
   
+  .fade-enter-active, .fade-exit-active {
+    opacity: 1;
+  }
