@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({services}) => {
-    const { img, title, service_details } = services;
+    const { id,img, title, service_details } = services;
 
     return (
         <div>
@@ -16,7 +17,11 @@ const Service = ({services}) => {
     <p className='lg:h-28 text-base '>{service_details}</p>
     
     <div className="card-actions ">
-      <button className="text-base font-bold text-white btn w-full bg-sky-500 hover:bg-sky-300 duration-200 ">Details and Pricing</button>
+    <Link to={`/event/${id}`}>
+              <button className="text-base font-bold text-white btn w-full bg-sky-500 hover:bg-sky-300 duration-200">
+                Details and Pricing
+              </button>
+            </Link>
     </div>
   </div>
 </div>
