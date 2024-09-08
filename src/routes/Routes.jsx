@@ -6,6 +6,8 @@ import ContactUs from "../components/ContactUs/ContactUs";
 import EventDetails from "../components/EventDetails/EventDetails";
 import BookingConfirmation from "../components/BookingConfirmation/BookingConfirmation";
 import BookedEvents from "../components/BookedEvents/BookedEvents";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 
 const routes = createBrowserRouter([
@@ -41,6 +43,14 @@ const routes = createBrowserRouter([
         {
             path: '/bookedevents',
             element:<BookedEvents></BookedEvents>
+        },
+        {
+            path: '/login',
+            element:<Login></Login>
+        },
+        {
+            path: '/register',
+            element:<Register></Register>
         }
         
        

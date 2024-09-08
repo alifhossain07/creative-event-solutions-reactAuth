@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 
@@ -70,7 +70,10 @@ const Header = () => {
         </div>
         </div>
 
-            <button className='btn px-10 mr-4 hover:bg-sky-200'>Log In</button>
+        <Link to='/login'>
+        <button className='btn px-10 mr-4 hover:bg-sky-200'>Log In</button>
+        </Link>
+           
         </div>
 
 </div>
