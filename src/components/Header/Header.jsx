@@ -10,10 +10,12 @@ const Header = () => {
             <li className=" font-bold mr-3">
                 <NavLink to="/">Home</NavLink>
             </li>
-            <li className=" font-bold">
+            <li className=" font-bold mr-3">
                 <NavLink to="/about">About</NavLink>
             </li>
-            
+            <li className=" font-bold">
+                <NavLink to="/contactus">Contact Us</NavLink>
+            </li>
         </>
     )
 
