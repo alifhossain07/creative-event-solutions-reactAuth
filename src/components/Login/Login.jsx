@@ -59,10 +59,10 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className=''>
            
             <div className='mt-20'>
-                <div className="hero bg-base-200 ">
+                <div className="hero  ">
                 <div className="hero-content flex-col lg:flex">
                     <div className="text-center lg:text-left">
                     <h1 className="lg:text-5xl mb-10 text-3xl  font-semibold">Log into Your Account</h1>
@@ -86,13 +86,13 @@ const Login = () => {
                         </label>
                         </div>
                         <div className="form-control mt-6">
-                        <button className=" bg-black text-white text-xl p-4 rounded-xl hover:bg-gray-700 duration-300">Login</button>
+                        <button className=" bg-blue-500 hover:bg-sky-500 text-white text-xl p-4 rounded-xl duration-300">Login</button>
                         </div>
                     </form>
                     
                     </div>
 
-                    <div className=' w-9/12'>
+                    <div className=' w-9/12 mt-10'>
 
                 <button onClick={handleGoogleLogin} className='btn bg-gray-300 text-black text-lg hover:bg-gray-400 w-full'><FcGoogle className='text-3xl' />Sign In With Google</button>
             

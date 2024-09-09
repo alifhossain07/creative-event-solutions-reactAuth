@@ -38,7 +38,7 @@ const Register = () => {
         <div>
             <div>
             <div className='mt-20'>
-              <div className="hero bg-base-200 ">
+              <div className="hero  ">
                 <div className="hero-content flex-col lg:flex">
                     <div className="text-center lg:text-left">
                     <h1 className="lg:text-5xl mb-10 text-3xl font-semibold">Create a New Account</h1>
@@ -72,7 +72,7 @@ const Register = () => {
                         
                         </div>
                         <div className="form-control mt-6">
-                        <button className=" bg-black text-white text-xl p-4 rounded-xl hover:bg-gray-700 duration-300">Register</button>
+                        <button className=" bg-blue-500 hover:bg-sky-500 text-white text-xl p-4 rounded-xl  duration-300">Register</button>
                         </div>
                     </form>
                     
