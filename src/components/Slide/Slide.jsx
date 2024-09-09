@@ -12,7 +12,7 @@ const Slide = ({ slider, index }) => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 rounded-2xl"></div>
 
       {/* Overlay content for the slide */}
-      <div className="absolute text-center space-y-5   p-4 text-white rounded-b-2xl">
+      <div className="absolute text-center space-y-10   p-4 text-white rounded-b-2xl">
 
         <h3 className="lg:text-5xl text-3xl font-bold">{title}</h3>
         <p className='lg:text-3xl text-xl font-semibold'>{short_details}</p>
