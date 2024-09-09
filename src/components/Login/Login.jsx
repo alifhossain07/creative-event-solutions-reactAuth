@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,10 +12,13 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Login = () => {
 
     const {signIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     const { signInWithGoogle } = useContext(AuthContext);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+    const from = location.state?.from?.pathname || '/';
     
     
     const handleLogin = e => {
@@ -30,6 +33,9 @@ const Login = () => {
         signIn(email,password)
         .then(result =>{
             console.log(result.user);
+            e.target.reset();
+            navigate(from, { replace: true });
+
             
         })
         .catch(error=>{
@@ -42,6 +48,7 @@ const Login = () => {
         signInWithGoogle()
         .then((result) => {
           console.log('User signed in with Google:', result.user);
+          navigate(from, { replace: true });
         })
         .catch((error) => {
           console.error('Error signing in with Google:', error);

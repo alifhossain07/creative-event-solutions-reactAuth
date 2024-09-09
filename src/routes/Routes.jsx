@@ -8,6 +8,7 @@ import BookingConfirmation from "../components/BookingConfirmation/BookingConfir
 import BookedEvents from "../components/BookedEvents/BookedEvents";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 const routes = createBrowserRouter([
@@ -33,7 +34,7 @@ const routes = createBrowserRouter([
         },
         {
             path: '/event/:id',
-            element: <EventDetails></EventDetails>,
+            element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
             loader: () => fetch('/public/sliderdata.json')
         },
         {
@@ -42,7 +43,7 @@ const routes = createBrowserRouter([
         },
         {
             path: '/bookedevents',
-            element:<BookedEvents></BookedEvents>
+            element:<PrivateRoute><BookedEvents></BookedEvents></PrivateRoute>
         },
         {
             path: '/login',

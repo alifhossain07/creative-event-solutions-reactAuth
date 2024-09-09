@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 
 
 
 const Header = () => {
+
+  const {user,logOut} = useContext(AuthContext);
+  const handleLogOut =()=>{
+
+    logOut()
+    .then(()=>console.log("User Log Out"))
+    .catch(error => console.log(error))
+  };
+
+
     const navLinks = (
         <>
             <li className=" font-bold mr-3">
@@ -65,14 +76,31 @@ const Header = () => {
 
   <div className="navbar-end flex ">
 
-        <Link to='/login'>
-        <button className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-200 mr-4'>Login</button>
-        </Link>
+          {
+            user ? <>
 
+            <span></span>
+            <button onClick={handleLogOut} className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-200 mr-4'>Sign Out</button>
+            </>
+            : <Link to='/login'>
+              <button className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-200 mr-4'>Login</button>
+              </Link>
+            
+            
+            
+          }
+          
 
         <div className="avatar">
         <div className="w-12 lg:w-16   rounded-full">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+        {
+
+          user ? <img src={user.photoURL}/>
+          :
+          <img src="https://i.ibb.co.com/KyWtrr4/avatar.jpg" alt="" />
+
+        }
+            
         </div>
         </div>
 
