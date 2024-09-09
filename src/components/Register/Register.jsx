@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { ToastContainer, toast } from 'react-toastify';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import app from '../../Firebase/firebase.config';
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -24,12 +24,32 @@ const Register = () => {
         createUser(email,password)
         .then(result => {
             console.log(result.user);
-            alert('User Created Successfully');
+            toast.success(' User Created Successfully!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+                });
             
         })
         .catch(error => {
             console.error(error);
-            alert('Failed to Create User');
+            toast.error('Error While Creating!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+                });
         });
        
     }
@@ -87,7 +107,19 @@ const Register = () => {
             </div>
 
             </div> 
-            <ToastContainer />
+            <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition: Bounce
+/>
         </div>
     );
 };

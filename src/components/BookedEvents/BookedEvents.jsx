@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import {Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const BookedEvents = () => {
   const [bookedEvents, setBookedEvents] = useState([]);
 
@@ -9,12 +10,24 @@ const BookedEvents = () => {
   }, []);
 
   const handleRemoveEvent = (id) => {
+    toast.success('Event Removed!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+        });
     // Filter out the event with the given ID
     const updatedEvents = bookedEvents.filter(event => event.id !== id);
     // Update the local storage with the remaining events
     localStorage.setItem('bookedEvents', JSON.stringify(updatedEvents));
     // Update the state to reflect the changes
     setBookedEvents(updatedEvents);
+    
   };
 
   return (
@@ -42,6 +55,19 @@ const BookedEvents = () => {
           <p className="text-center text-xl">No events booked yet.</p>
         )}
       </div>
+      <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition: Bounce
+/>
     </div>
   );
 };

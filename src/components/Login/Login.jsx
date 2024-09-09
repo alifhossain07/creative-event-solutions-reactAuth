@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
-import { ToastContainer, toast } from 'react-toastify';
+import {Bounce, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from "react-icons/fc";
 import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -33,6 +33,18 @@ const Login = () => {
         signIn(email,password)
         .then(result =>{
             console.log(result.user);
+            toast.success(' User Logged In!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+                });
+
             e.target.reset();
             navigate(from, { replace: true });
 
@@ -40,6 +52,17 @@ const Login = () => {
         })
         .catch(error=>{
             console.error(error); 
+            toast.error('Error While loggin in!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+                });
         })
     };
 
@@ -48,9 +71,33 @@ const Login = () => {
         signInWithGoogle()
         .then((result) => {
           console.log('User signed in with Google:', result.user);
+          toast.success(' Log In Successful!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+            });
           navigate(from, { replace: true });
         })
         .catch((error) => {
+
+            toast.error('Error While loggin in!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+                });
+            
           console.error('Error signing in with Google:', error);
         });
       
@@ -106,7 +153,19 @@ const Login = () => {
 
             </div>
 
-            <ToastContainer />
+            <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition: Bounce
+/>
         </div>
     );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData, useParams, useNavigate } from 'react-router-dom';
+import {Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EventDetails = () => {
     const { id } = useParams();
@@ -13,6 +15,18 @@ const EventDetails = () => {
     }
 
     const handleBookNow = () => {
+
+        toast.success(' Successfully Booked!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+            });
         // Retrieve existing bookings from local storage
         const existingBookings = JSON.parse(localStorage.getItem('bookedEvents')) || [];
     
@@ -21,8 +35,21 @@ const EventDetails = () => {
     
         if (isAlreadyBooked) {
             setMessage('This event is already booked.');
+            toast.error(' This Event is already Booked!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+                });
             return;
         }
+        
+        
     
         // Add the new event to the list
         existingBookings.push(event);
@@ -34,6 +61,7 @@ const EventDetails = () => {
     
         // Navigate to the booking confirmation page
         navigate('/booking-confirmation');
+        
     };
     
     return (
@@ -50,6 +78,19 @@ const EventDetails = () => {
             </div>
             
             {message && <p className="text-red-500 mt-10 text-center text-xl ">{message}</p>}
+            <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition: Bounce
+/>
         </div>
     );
 };
