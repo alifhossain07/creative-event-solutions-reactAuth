@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
@@ -6,9 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from "react-icons/fc";
 import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { AuthContext } from '../../Providers/AuthProvider';
 
 
 const Login = () => {
+
+    const {signIn} = useContext(AuthContext);
+    const { signInWithGoogle } = useContext(AuthContext);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -23,40 +27,24 @@ const Login = () => {
         const password = form.get('password');
         console.log(email,password);
 
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                toast.success("Signed In Successfully");
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                toast.error(errorMessage);
-            });
+        signIn(email,password)
+        .then(result =>{
+            console.log(result.user);
+            
+        })
+        .catch(error=>{
+            console.error(error); 
+        })
     };
 
     const handleGoogleLogin = () => {
 
-        signInWithPopup(auth, googleProvider)
+        signInWithGoogle()
         .then((result) => {
-          // This gives you a Google Access Token. You can use it to access the Google API.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-          // The signed-in user info.
-          const user = result.user;
-          toast.success("Signed In Successfully");
-         
-        }).catch((error) => {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // The email of the user's account used.
-          const email = error.customData.email;
-          // The AuthCredential type that was used.
-          const credential = GoogleAuthProvider.credentialFromError(error);
-          // ...
+          console.log('User signed in with Google:', result.user);
+        })
+        .catch((error) => {
+          console.error('Error signing in with Google:', error);
         });
       
 

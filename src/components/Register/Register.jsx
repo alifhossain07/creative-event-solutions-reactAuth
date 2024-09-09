@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import app from '../../Firebase/firebase.config';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
     const auth = getAuth(app);
+    const {createUser} = useContext(AuthContext);
 
 
     const handleRegister = e => {
@@ -19,17 +21,15 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed up 
-            const user = userCredential.user;
-            toast.success('Registration Successfull');
-            // ...
+        createUser(email,password)
+        .then(result => {
+            console.log(result.user);
+            alert('User Created Successfully');
+            
         })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
+        .catch(error => {
+            console.error(error);
+            alert('Failed to Create User');
         });
        
     }
