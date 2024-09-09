@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from "react-icons/fc";
+import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
     
     
     const handleLogin = e => {
@@ -32,9 +35,30 @@ const Login = () => {
                 const errorMessage = error.message;
                 toast.error(errorMessage);
             });
-        
-       
+    };
 
+    const handleGoogleLogin = () => {
+
+        signInWithPopup(auth, googleProvider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          // The signed-in user info.
+          const user = result.user;
+          toast.success("Signed In Successfully");
+         
+        }).catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          const email = error.customData.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+          // ...
+        });
+      
 
 
     };
@@ -71,6 +95,12 @@ const Login = () => {
                         </div>
                     </form>
                     
+                    </div>
+
+                    <div className=' w-9/12'>
+
+                <button onClick={handleGoogleLogin} className='btn bg-gray-300 text-black text-lg hover:bg-gray-400 w-full'><FcGoogle className='text-3xl' />Sign In With Google</button>
+            
                     </div>
                     <h1 className='mt-10 text-xl font-semibold'>Dont have an Account? <Link className='text-blue-500' to='/register'>Register</Link>  Here</h1>
                 </div>
