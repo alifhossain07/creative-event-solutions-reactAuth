@@ -5,8 +5,8 @@ const UserDashboard = () => {
     const { user } = useContext(AuthContext);
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 p-8">
-            <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 sm:p-10">
+        <div className="mt-10 bg-gradient-to-r  lg:p-8 p-4">
+            <div className="lg:max-w-4xl mx-auto bg-gradient-to-r from-blue-200 to-blue-50 shadow-lg rounded-lg p-6 sm:p-10">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
                     Welcome, {user?.displayName || 'User'}!
                 </h2>

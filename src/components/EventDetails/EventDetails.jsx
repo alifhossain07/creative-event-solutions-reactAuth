@@ -49,7 +49,7 @@ const EventDetails = () => {
             <button className="btn px-14 text-xl bg-blue-500 text-white hover:bg-blue-700" onClick={handleBookNow}>Book Now</button>
             </div>
             
-            {message && <p className="text-red-500 mt-4">{message}</p>}
+            {message && <p className="text-red-500 mt-10 text-center text-xl ">{message}</p>}
         </div>
     );
 };
