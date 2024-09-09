@@ -3,10 +3,10 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinke
 
 const ContactUs = () => {
   return (
-    <div className="w-11/12 mx-auto my-12 p-8 bg-gradient-to-r from-blue-100 to-blue-50 shadow-2xl rounded-lg">
+    <div className="w-11/12 mx-auto my-12 p-8 bg-gradient-to-r from-blue-200 to-blue-50 shadow-2xl rounded-lg">
       {/* Header Section */}
       <section className="mb-12 text-center">
-        <h1 className="text-5xl font-bold text-gray-800 mb-4">Get In Touch</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h1>
         <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
           Connect with us to start planning your next incredible event. Whether you have questions or need assistance, we're here to help!
         </p>
@@ -32,8 +32,10 @@ const ContactUs = () => {
           </div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">Email Us</h2>
           <p className="text-lg text-gray-600 mb-4">Send us an email for inquiries:</p>
-          <p className="text-xl font-bold text-gray-800">info@creativeeventsolutions.com</p>
-          <p className="text-xl font-bold text-gray-800">support@creativeeventsolutions.com</p>
+          <div className='w-full flex flex-col items-center mx-auto'>
+          <p className="text-xl font-bold text-gray-800 ">info@solutions.com</p>
+          <p className="text-xl font-bold text-gray-800">support@solutions.com</p>
+          </div>
         </div>
 
         {/* Address Section */}
