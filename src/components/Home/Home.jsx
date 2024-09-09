@@ -3,6 +3,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Slides from '../../Slides/Slides';
 import Services from '../Services/Services';
+import Testimonial from '../Testimonials/Testimonials';
+import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
 
 
 
@@ -15,6 +17,8 @@ const Home = () => {
         {/* Slider Section */}
         <Slides sliderData={sliderData}></Slides>
         <Services sliderData={sliderData}></Services>
+        <Testimonial></Testimonial>
+        <UpcomingEvents></UpcomingEvents>
 
 
         </div>
