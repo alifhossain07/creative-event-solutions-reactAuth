@@ -13,25 +13,29 @@ const EventDetails = () => {
     }
 
     const handleBookNow = () => {
-        // Retrieve existing booked events from local storage
+        // Retrieve existing bookings from local storage
         const existingBookings = JSON.parse(localStorage.getItem('bookedEvents')) || [];
-
+    
         // Check if the event is already booked
         const isAlreadyBooked = existingBookings.some(e => e.id === event.id);
-
+    
         if (isAlreadyBooked) {
             setMessage('This event is already booked.');
             return;
         }
-
+    
         // Add the new event to the list
         existingBookings.push(event);
         // Save the updated list back to local storage
         localStorage.setItem('bookedEvents', JSON.stringify(existingBookings));
+    
+        // Store the booked event to localStorage for confirmation
+        localStorage.setItem('bookedEvent', JSON.stringify(event));
+    
         // Navigate to the booking confirmation page
         navigate('/booking-confirmation');
     };
-
+    
     return (
         <div className="container mt-10 mx-auto p-4">
             <h1 className="lg:text-4xl text-2xl font-bold mb-4">{event.title}</h1>
