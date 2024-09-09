@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Apply the cyan background color to the entire page */
 html, body {
-   /* Use Tailwind color classes */
-  height: 100%; /* Ensure the body takes up the full viewport height */
+  @apply bg-gradient-to-r from-cyan-100 via-sky-200 to-blue-300; /* Use Tailwind color codes directly (blue-500) */
+  
   margin: 0; /* Remove default margin */
+  
 }
 
 #root {

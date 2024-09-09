@@ -5,7 +5,7 @@ const Slides = ({ sliderData }) => {
   return (
     <div className='h-full mt-10'>
       
-      <div className="carousel w-full">
+      <div className="carousel w-full ">
         {sliderData.map((slider, index) => (
           <Slide key={index} slider={slider} index={index + 1} />
         ))}

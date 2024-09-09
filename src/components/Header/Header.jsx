@@ -27,9 +27,23 @@ const Header = () => {
             <li className=" font-bold mr-3">
                 <NavLink to="/contactus">Contact Us</NavLink>
             </li>
-            <li className=" font-bold">
+            {
+
+              user && <><li className=" font-bold mr-4">
                 <NavLink to="/bookedevents">Booked Events</NavLink>
-            </li>
+                      </li>
+                      <li className=" font-bold">
+                <NavLink to="/user-dashboard">User Dashboard</NavLink>
+                      </li>
+                      
+                      
+                      
+                      </> 
+                      
+
+
+            }
+            
         </>
         
     )
@@ -38,7 +52,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 rounded-3xl">
+            <div className="navbar bg-gradient-to-br from-sky-500 via-cyan-500 to-blue-600 rounded-3xl p-4 shadow-lg">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

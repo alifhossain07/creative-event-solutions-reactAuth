@@ -9,6 +9,7 @@ import BookedEvents from "../components/BookedEvents/BookedEvents";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import UserDashboard from "../components/UserDashboard/UserDashboard";
 
 
 const routes = createBrowserRouter([
@@ -52,6 +53,10 @@ const routes = createBrowserRouter([
         {
             path: '/register',
             element:<Register></Register>
+        },
+        {
+            path:'/user-dashboard',
+            element:<PrivateRoute><UserDashboard></UserDashboard></PrivateRoute>
         }
         
        
