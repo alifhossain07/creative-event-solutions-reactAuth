@@ -5,7 +5,7 @@ const About = () => {
     <div className="w-11/12 mx-auto my-12 p-8 bg-white shadow-lg rounded-lg">
       {/* Introduction Section */}
       <section className="mb-24 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">About CreativeEvent Solutions</h1>
+        <h1 className="lg:text-4xl text-3xl font-bold text-gray-800 mb-4">About Creative<span className='text-blue-600'>Event</span> Solutions</h1>
         <p className="text-lg text-gray-600 leading-relaxed">
           At CreativeEvent Solutions, we believe that every event should be an unforgettable experience. From thrilling concerts and dynamic theater performances to intimate comedy shows and grand sports events, we specialize in crafting events that leave lasting memories.
         </p>

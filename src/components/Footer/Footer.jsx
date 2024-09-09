@@ -3,10 +3,10 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='mt-20'>
-            <footer className="footer flex justify-around rounded-full items-center bg-sky-300 p-20">
+            <footer className="footer lg:flex-row flex flex-col lg:justify-around rounded-3xl lg:rounded-full items-center bg-sky-300 lg:p-20 p-10">
   <aside>
-    <img className='w-80' src="https://i.ibb.co.com/fGhyC2S/default1.png" alt="" />
-    <p className='font-semibold text-xl'>
+    <img className='lg:w-80 w-96' src="https://i.ibb.co.com/fGhyC2S/default1.png" alt="" />
+    <p className='font-semibold  lg:mt-0 text-center text-xl'>
       
       Providing reliable service since 2007
     </p>

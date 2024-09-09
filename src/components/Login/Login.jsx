@@ -27,7 +27,7 @@ const Login = () => {
                 <div className="hero bg-base-200 ">
                 <div className="hero-content flex-col lg:flex">
                     <div className="text-center lg:text-left">
-                    <h1 className="text-5xl mb-10 font-semibold">Log into Your Account</h1>
+                    <h1 className="lg:text-5xl mb-10 text-3xl  font-semibold">Log into Your Account</h1>
                     
                     </div>
                     <div className="card bg-base-100 w-full  shrink-0 shadow-2xl">
