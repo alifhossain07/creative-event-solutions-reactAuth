@@ -6,7 +6,7 @@ const Service = ({services}) => {
 
     return (
         <div>
-            <div className="card w-80 lg:w-96 h-[550px] lg:h-[550px] mx-auto bg-blue-100 shadow-xl">
+            <div className="card w-80 lg:w-96 h-[550px] lg:h-[550px] mx-auto bg-gradient-to-r from-cyan-50 via-sky-100 to-blue-100 shadow-xl">
   <figure>
     <img className='object-cover w-full h-52'
       src={img}

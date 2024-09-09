@@ -14,7 +14,7 @@ const Slides = ({ sliderData }) => {
       {/* Carousel navigation buttons */}
       <div className="flex w-full justify-center gap-2 py-2">
         {sliderData.map((_, index) => (
-          <a key={index} href={`#item${index + 1}`} className="btn bg-sky-300 btn-sm lg:btn-md">
+          <a key={index} href={`#item${index + 1}`} className="btn bg-cyan-500 btn-sm lg:btn-md">
             {index + 1}
           </a>
         ))}
