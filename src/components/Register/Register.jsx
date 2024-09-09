@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import app from '../../Firebase/firebase.config';
 
 const Register = () => {
+    const auth = getAuth(app);
 
 
     const handleRegister = e => {
@@ -13,14 +18,27 @@ const Register = () => {
         const photo = form.get('url');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password,name,photo);
+
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed up 
+            const user = userCredential.user;
+            toast.success('Registration Successfull');
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+        });
+       
     }
     
     return (
         <div>
             <div>
             <div className='mt-20'>
-                <div className="hero bg-base-200 ">
+              <div className="hero bg-base-200 ">
                 <div className="hero-content flex-col lg:flex">
                     <div className="text-center lg:text-left">
                     <h1 className="lg:text-5xl mb-10 text-3xl font-semibold">Create a New Account</h1>
@@ -69,6 +87,7 @@ const Register = () => {
             </div>
 
             </div> 
+            <ToastContainer />
         </div>
     );
 };

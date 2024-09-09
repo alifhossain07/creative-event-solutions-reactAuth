@@ -1,18 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from '../../Firebase/firebase.config';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
+
+    const auth = getAuth();
+    
+    
     const handleLogin = e => {
 
-
-
-       
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
         console.log(email,password);
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                toast.success("Signed In Successfully");
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+            });
         
        
 
@@ -61,6 +80,8 @@ const Login = () => {
             
 
             </div>
+
+            <ToastContainer />
         </div>
     );
 };
