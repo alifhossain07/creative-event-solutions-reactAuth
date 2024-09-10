@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Apply the cyan background color to the entire page */
+
 html, body {
-  @apply bg-gradient-to-r from-cyan-100 via-sky-200 to-blue-300; /* Use Tailwind color codes directly (blue-500) */
+  @apply bg-gradient-to-r from-cyan-100 via-sky-200 to-blue-300; 
   
-  margin: 0; /* Remove default margin */
+  margin: 0; 
   
 }
 
-#root {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 10px;
-}
+

@@ -22,7 +22,7 @@ const routes = createBrowserRouter([
         {
             path: '/',
             element:<Home></Home> ,
-            loader: () => fetch('/public/sliderdata.json'),
+            loader: () => fetch('sliderdata.json'),
         },
         {
             path: '/about',
@@ -36,7 +36,7 @@ const routes = createBrowserRouter([
         {
             path: '/event/:id',
             element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
-            loader: () => fetch('/public/sliderdata.json')
+            loader: () => fetch('sliderdata.json')
         },
         {
             path: '/booking-confirmation',

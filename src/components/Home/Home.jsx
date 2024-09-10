@@ -17,9 +17,10 @@ const Home = () => {
         {/* Slider Section */}
         <Slides sliderData={sliderData}></Slides>
         <Services sliderData={sliderData}></Services>
-        <Testimonial></Testimonial>
         <UpcomingEvents></UpcomingEvents>
-
+        <Testimonial></Testimonial>
+        
+        
 
         </div>
     );

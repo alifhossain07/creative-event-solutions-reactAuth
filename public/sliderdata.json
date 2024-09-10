@@ -4,7 +4,7 @@
     "img": "https://i.ibb.co.com/C62Jcr0/slider1.jpg",
     "title": "Concerts & Music Festivals",
     "short_details": "Book us to organize spectacular concerts and music festivals.",
-    "service_details": "We specialize in organizing large-scale concerts and music festivals featuring top artists and bands. From venue selection to event coordination, we handle all aspects to ensure a memorable experience for your audience.",
+    "service_details": "We specialize in organizing large-scale concerts and music festivals featuring top artists and bands.",
     "our_plan": "1. **Initial Consultation**: Understand your vision and requirements.\n2. **Venue Selection**: Find and secure a suitable venue.\n3. **Artist Booking**: Coordinate with top artists and bands.\n4. **Event Design**: Plan the event layout, stage setup, and audience experience.\n5. **Promotion**: Develop a marketing plan to attract attendees.\n6. **On-Site Management**: Oversee all logistics on the day of the event.\n7. **Post-Event Evaluation**: Gather feedback and analyze event success.",
     "pricing": "$5000 - $20000"
   },
@@ -13,16 +13,16 @@
     "img": "https://i.ibb.co.com/8PWG54J/slider2.jpg",
     "title": "Theater & Performing Arts",
     "short_details": "Let us manage your theater and performing arts events.",
-    "service_details": "Our team excels in organizing theater productions and performing arts events. We provide end-to-end services including production design, ticket sales, and day-of-event management to bring your vision to life.",
+    "service_details": "Our team excels in organizing theater productions and performing arts events.",
     "our_plan": "1. **Concept Development**: Discuss the theme and objectives of the performance.\n2. **Production Design**: Create set designs, lighting, and sound arrangements.\n3. **Casting & Rehearsals**: Manage casting and organize rehearsals.\n4. **Ticket Sales**: Set up ticketing systems and sales channels.\n5. **Marketing**: Promote the event through various channels.\n6. **Event Execution**: Ensure smooth operation of the performance.\n7. **Feedback Collection**: Collect audience feedback and analyze performance.",
     "pricing": "$3000 - $15000"
   },
   {
     "id": 3,
     "img": "https://i.ibb.co.com/L9SsYFm/slider3.jpg",
-    "title": "Film Screenings & Premieres",
+    "title": "Film Screenings ",
     "short_details": "Organize exclusive film screenings and premieres with us.",
-    "service_details": "We offer comprehensive planning for film screenings and premieres, ensuring a smooth and professional event. From securing venues to coordinating with filmmakers and managing guest lists, we cover all details.",
+    "service_details": "We offer comprehensive planning for film screenings and premieres, ensuring a smooth and professional event.",
     "our_plan": "1. **Film Selection**: Choose films and coordinate with distributors.\n2. **Venue Arrangement**: Secure and set up screening venues.\n3. **Guest Management**: Manage invitations and RSVPs.\n4. **Technical Setup**: Ensure high-quality screening equipment.\n5. **Event Promotion**: Create buzz through targeted marketing.\n6. **Event Coordination**: Oversee the event flow and address any issues.\n7. **Post-Event Review**: Evaluate the success and gather attendee feedback.",
     "pricing": "$4000 - $12000"
   },
@@ -31,7 +31,7 @@
     "img": "https://i.ibb.co.com/LQH2sXv/slide4.jpg",
     "title": "Comedy Shows",
     "short_details": "Book us to organize unforgettable comedy shows.",
-    "service_details": "Our services include organizing comedy shows with top comedians. We handle venue arrangements, booking, and event logistics to create a fun and engaging atmosphere for your audience.",
+    "service_details": "Our services include organizing comedy shows with top comedians. ",
     "our_plan": "1. **Talent Booking**: Secure comedians and performers.\n2. **Venue Selection**: Choose an appropriate venue for the show.\n3. **Event Promotion**: Market the comedy show to attract audiences.\n4. **Logistics Management**: Arrange for sound, lighting, and seating.\n5. **On-Site Coordination**: Manage the event to ensure smooth operation.\n6. **Audience Engagement**: Enhance the experience with interactive elements.\n7. **Post-Event Feedback**: Collect and review feedback from attendees.",
     "pricing": "$2000 - $8000"
   },
@@ -40,7 +40,7 @@
     "img": "https://i.ibb.co.com/bFDJKTp/slide5.png",
     "title": "Sports Events",
     "short_details": "Let us plan and execute your sports events seamlessly.",
-    "service_details": "We specialize in organizing sports events, from local matches to major tournaments. Our team ensures all aspects, including venue management, equipment, and scheduling, are handled efficiently for a successful event.",
+    "service_details": "We specialize in organizing sports events, from local matches to major tournaments. ",
     "our_plan": "1. **Event Planning**: Define the scope and format of the sports event.\n2. **Venue Booking**: Secure sports venues and facilities.\n3. **Equipment Rental**: Arrange for necessary sports equipment.\n4. **Scheduling**: Create and manage event schedules.\n5. **Team Coordination**: Organize teams and participants.\n6. **Event Promotion**: Promote the event to attract spectators.\n7. **Event Management**: Oversee event operations and ensure smooth execution.",
     "pricing": "$6000 - $25000"
   },
@@ -49,7 +49,7 @@
     "img": "https://i.ibb.co.com/8Dcgmdp/slide6.jpg",
     "title": "Music Workshops",
     "short_details": "Organize music workshops and masterclasses with our expertise.",
-    "service_details": "We organize music workshops and masterclasses featuring industry professionals. We manage all details from venue selection to workshop coordination, helping you provide valuable learning experiences for participants.",
+    "service_details": "We organize music workshops and masterclasses featuring industry professionals. ",
     "our_plan": "1. **Workshop Planning**: Determine the workshop's focus and objectives.\n2. **Instructor Selection**: Book experienced musicians and educators.\n3. **Venue Setup**: Arrange for suitable workshop venues.\n4. **Participant Registration**: Handle registration and manage attendees.\n5. **Workshop Promotion**: Market the workshops to attract participants.\n6. **Event Coordination**: Oversee the workshop execution and manage logistics.\n7. **Feedback Collection**: Gather participant feedback and assess the workshop's success.",
     "pricing": "$1500 - $5000"
   }

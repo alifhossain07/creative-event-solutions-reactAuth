@@ -26,9 +26,9 @@ const events = [
 
 const UpcomingEvents = () => {
   return (
-    <section className="py-12 w-11/12 mx-auto bg-gradient-to-bl from-blue-500 via-cyan-200 to-sky-500 rounded-3xl">
+    <section className="py-12 w-11/12 my-24 mx-auto bg-gradient-to-bl from-blue-500 via-cyan-200 to-sky-500 rounded-md px-5">
       <div className="container  mx-auto px-6">
-        <h2 className="lg:text-3xl text-2xl font-bold text-center mb-12 text-gray-800">Upcoming Events</h2>
+        <h2 className="lg:text-3xl text-2xl font-bold text-center mb-12 text-gray-100 uppercase">Upcoming Events</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event) => (
             <div key={event.id} className="relative bg-sky-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:scale-105">

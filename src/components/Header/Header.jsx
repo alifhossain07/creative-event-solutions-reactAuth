@@ -52,7 +52,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar bg-gradient-to-br from-sky-500 via-cyan-500 to-blue-600 rounded-3xl p-4 shadow-lg">
+            <div className="navbar bg-gradient-to-br from-sky-500 via-cyan-500 to-blue-600  p-4 shadow-lg">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,12 +76,13 @@ const Header = () => {
       </ul>
     </div>
    <div>
-    <h1 className='font-bold lg:hidden text-base'>CreativeEvent Solutions</h1>
+    <h1 className='font-bold lg:hidden text-gray-200'>CreativeEvent Solutions</h1>
     <img className="w-7/12 mt-1 hidden lg:block " src="https://i.ibb.co.com/T1yqf37/default.png" alt="" />
    </div>
   </div>
+
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal text-gray-200 uppercase px-1">
      {navLinks}
     </ul>
   </div>
@@ -94,10 +95,10 @@ const Header = () => {
             user ? <>
 
             <span></span>
-            <button onClick={handleLogOut} className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-200 mr-4'>Sign Out</button>
+            <button onClick={handleLogOut} className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-500 hover:text-gray-200 hover:border hover:border-white duration-200 mr-4'>Sign Out</button>
             </>
             : <Link to='/login'>
-              <button className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-200 mr-4'>Login</button>
+              <button className='text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-blue-500 mr-4'>Login</button>
               </Link>
             
             
@@ -106,7 +107,7 @@ const Header = () => {
           
 
         <div className="avatar">
-        <div className="w-12 lg:w-16   rounded-full">
+        <div className="w-10   rounded-full">
         {
 
           user ? <img src={user.photoURL}/>
